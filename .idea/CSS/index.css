@@ -1,5 +1,13 @@
 .listAllProductDiv {
-    background-color: red;
+    background-color: #e19797;
     height: 300px;
     width: 400px
+}
+.addNewProductDiv{
+    background-color: #67c4e5;
+    /*height: 150px;*/
+    /*width: 300px;*/
+    padding: 9px;
+    /*justify-content: space-evenly;*/
+
 }
