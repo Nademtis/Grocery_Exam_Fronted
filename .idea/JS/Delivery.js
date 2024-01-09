@@ -1,4 +1,5 @@
 const addNewProductURL = "http://localhost:3333/addProduct"
+const fetchListURL = "http://localhost:3333/getAllProducts"
 
 function newProduct() {
     console.log("hit method")
@@ -30,3 +31,44 @@ function newProduct() {
         console.error("error saving product" + error)
     })
 }
+
+let products = []; // Change this from const to let
+async function fetchList() {
+    try {
+        const response = await fetch(fetchListURL);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+
+        products = await response.json();
+        console.log(products);
+
+        let tableBody = document.getElementById("listAllProductTableBody");
+
+        // For at rydde table, hvis flere klik på knap
+        tableBody.innerHTML = "";
+
+        for (let i = 0; i < products.length; i++) {
+            let rowData = document.createElement('tr'); // Create a table row
+
+            let productNameCell = document.createElement('td');
+            productNameCell.textContent = products[i].name; // Replace 'value' with the correct property name
+            rowData.appendChild(productNameCell);
+
+            let weightCell = document.createElement('td');
+            weightCell.textContent = products[i].weight; // Replace 'value' with the correct property name
+            rowData.appendChild(weightCell);
+
+            let priceCell = document.createElement('td');
+            priceCell.textContent = products[i].price; // Replace 'value' with the correct property name
+            rowData.appendChild(priceCell);
+
+            tableBody.appendChild(rowData); // Append the row to the table body
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+}
+
