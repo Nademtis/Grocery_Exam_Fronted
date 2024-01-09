@@ -53,6 +53,7 @@ async function fetchList() {
             let rowData = document.createElement('tr'); // Create a table row
 
             let productNameCell = document.createElement('td');
+            productNameCell.classList.add("tableData")
             productNameCell.textContent = products[i].name; // Replace 'value' with the correct property name
             rowData.appendChild(productNameCell);
 

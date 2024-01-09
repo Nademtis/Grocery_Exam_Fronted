@@ -1,7 +1,5 @@
 .listAllProductDiv {
     background-color: #e19797;
-    height: 300px;
-    width: 400px
 }
 .addNewProductDiv{
     background-color: #67c4e5;
@@ -9,5 +7,11 @@
     /*width: 300px;*/
     padding: 9px;
     /*justify-content: space-evenly;*/
+}
+.table-striped tbody tr:nth-child(odd) {
+    background-color: red;
+}
 
+.table-striped tbody tr:nth-child(even) {
+    background-color: blue;
 }
