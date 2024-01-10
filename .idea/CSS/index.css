@@ -1,3 +1,4 @@
+
 .listAllProductDiv {
     background-color: #e19797;
 }
@@ -8,10 +9,31 @@
     padding: 9px;
     /*justify-content: space-evenly;*/
 }
-.table-striped tbody tr:nth-child(odd) {
-    background-color: red;
+.greenButton{
+    background-color: #33b249;
+    border: 1px solid black;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border-radius: 4px;
+    color: white;
 }
-
-.table-striped tbody tr:nth-child(even) {
-    background-color: blue;
+.greenButton:hover{
+    background-color: #288a39;
+    color: white;
+}
+.backButton{
+    background-color: #b24933;
+    border: 1px solid black;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border-radius: 4px;
+    color: white;
+}
+.backButton:hover{
+    background-color: #8a3928;
+}
+.searchProductDiv{
+    background-color: lightgray;
+}
+.resultDiv{
+    background-color: #33b249;
+    color: white;
 }
